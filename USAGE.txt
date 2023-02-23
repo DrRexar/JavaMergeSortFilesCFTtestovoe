@@ -1,0 +1,40 @@
+# Общая информация
+
+Версия Java - Java 19
+
+Система сборки - Apache Maven 3.9.0
+
+Используемые библиотеки:
+1. Apache Commons CLI 1.5.0 (https://mvnrepository.com/artifact/commons-cli/commons-cli)
+
+# Инструкция по работе
+
+Сборка пакета .jar происходила с помощью Maven, интегрированного в IDE.
+
+Готовый собранный .jar находится в папке target.
+
+Для запуска программы необходимо ввести следующую команду:
+
+    java -cp target/merge-sort-files-1.0-SNAPSHOT.jar com.example.MergeSortFiles [OPTIONS] input.txt output.txt 
+
+Параметры запуска:
+
+    usage: java -cp target/merge-sort-files-1.0-SNAPSHOT.jar com.example.MergeSortFiles [OPTIONS] input.txt output.txt 
+
+    in.txt - имя входных файлов, количество которых должно быть не менее одного (Параметр обязательный).
+    
+    out.txt - имя выходного файла с результатом сортировки слиянием (Параметр обязательный).
+
+    -a,(ascending)  --  Сортировка по возрастанию. Параметр по-умолчанию, необязательный.
+    -d,(descending) --  Сортировка по убыванию. Параметр необязательный.
+    -i,(integer)  --    Сортировка целочисленных объектов. Параметр обязательный.
+    -s,(string)   --    Сортировка строковых объектов. Параметр обязательный.
+
+Пример запуска:
+    java -cp target/merge-sort-files-1.0-SNAPSHOT.jar com.example.MergeSortFiles -a -s "path to the first input file" "path to the second input file" "path to the output file"
+
+Пример с приведенным путем:    
+    java -cp target/merge-sort-files-1.0-SNAPSHOT.jar com.example.MergeSortFiles -a -s "C:\Users\79994\Desktop\MergeSortFiles\target\in-a-s1.txt" "C:\Users\79994\Desktop\MergeSortFiles\target\in-a-s2.txt" "C:\Users\79994\Desktop\MergeSortFiles\target\out-a-s.txt"
+
+Сборка проекта командой:
+    mvn package
